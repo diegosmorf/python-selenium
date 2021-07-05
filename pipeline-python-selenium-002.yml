@@ -1,0 +1,36 @@
+trigger:
+  none
+
+pool:
+  vmImage: ubuntu-latest
+  
+steps:
+- script: |
+    
+    python -m pip install --upgrade pip setuptools wheel
+    
+    pip install selenium
+    pip install pytest
+    pip install pytest-html
+    pip install pytest-cov
+    pip install flask
+    pip install webdriver_manager    
+    
+  displayName: 'Setup Dependencies'
+
+- script: |
+    pytest --doctest-modules --junitxml=junit/test-results.xml --cov=. --cov-report=xml --cov-report=html
+  displayName: 'Run Script'
+    
+- task: PublishTestResults@2
+  condition: succeededOrFailed()
+  inputs:
+    testResultsFiles: '**/test-*.xml'
+    testRunTitle: 'Publish test results for Python $(python.version)'
+  displayName: 'Publish Test Results'
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: Cobertura
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
+  displayName: 'Publish Code Coverage Results'
