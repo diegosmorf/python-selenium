@@ -26,6 +26,7 @@ def post_task():
     #options.add_argument('--headless')
     chrome_exe= ChromeDriverManager()
     driver = webdriver.Chrome(executable_path=chrome_exe.install(), options=options)
+    
     driver.implicitly_wait(60) 
 
     searchText = request.args.get('searchText')
@@ -44,4 +45,4 @@ def post_task():
     return jsonify(textSearched = f"{searchText}", headPageFound=result)
 
 
-app.run()
+app.run(host='0.0.0.0',port=5000)
