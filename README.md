@@ -17,6 +17,19 @@ Selenium is an umbrella project encapsulating a variety of tools and libraries e
 
 Selenium's source code is made available under the [Apache 2.0 license](https://github.com/SeleniumHQ/selenium/blob/trunk/LICENSE).
 
+Selenium IDE Browser Extensions: 
+The new Selenium IDE is designed to record your interactions with websites to help you generate and maintain site automation, tests, and remove the need to manually step through repetitive takes. 
+
+Features include:
+* Recording and playing back tests on Firefox, Chrome and Edge.
+* Organizing tests into suites for easy management.
+* Export to your favorite software language (eg.python, java, C# etc)
+
+Download:
+- Firefox: [link](https://addons.mozilla.org/pt-BR/firefox/addon/selenium-ide/)
+- Chrome: [link](https://chrome.google.com/webstore/detail/selenium-ide/mooikfkahbdckldjjndioackbalphokd)
+- Edge: [link](https://microsoftedge.microsoft.com/addons/detail/selenium-ide/ajdpfmkffanmkhejnopjppegokpogffp)
+
 ## Documentation
 
 * [User Manual](https://selenium.dev/documentation/)
